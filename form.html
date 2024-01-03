@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header"><h1> Formularz</h1></div>
+    <div class="css-selector">
+        <div id="formcontent"><form target="form.html">
+            <label for="imie"> Podaj Imię</label>
+            <input type="text" name="imie">
+            <br><br>
+            <label for="zwierzze"> Jakie zwierze najbardziej ci się podobało?</label>
+            <select name="zwierze">
+            <option>Brachiops</option>
+            <option>Jaszczurka</option>
+            <option>Krab pacyficzny</option>
+            <option>Turritopsis dohrnii </option>
+            <option>Robak Bobbit</option>
+            <option>Niesporczaki</option>
+            <option>Ośmiornica Dumbo</option>
+            </select>
+            <br><br>
+            <label for="ocena"> Ocena strony od 1 do 10</label>
+            <input type="number" name="ocena" min="1" max="10">
+            <br><br>
+            <label for="komentarz"> Twój komentarz na temat strony</label>
+            <input type="text" name="komentarz">
+            <br><br>
+            <input type="submit" value="Potwierdz" class="button-sub">
+     
+            <input type="reset" value="Resetuj" class="button-sub">
+            <br>
+        </form>
+    </div>
+    <br>
+    <br>
+   <a href="index.html"><div class="back">Powrót do strony głównej</div></a> 
+    </div>
+    <script>
+        let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+    </script>
+    
+    
+</body>
+</html>
